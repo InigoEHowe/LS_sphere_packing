@@ -16,9 +16,9 @@ def clustering(sphere_radii,n_spheres,packing_fraction_goal):
 
     Parameters
     ----------
-    particle_radii : float
+    sphere_radii : float
         The radii of the spheres
-    n_particles : int
+    n_spheres : int
         The dimensions of the volume in which the clusters will be placed.
     packing_fraction_goal : float
         The goal packing density to reach within the clusters.
