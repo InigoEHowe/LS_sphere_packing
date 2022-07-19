@@ -9,16 +9,16 @@ import matplotlib.pyplot as plt
 from LS_packing  import *
 from RSA_packing import *
 
-def clustering(particle_radii,n_particles,packing_fraction_goal):
+def clustering(sphere_radii,n_spheres,packing_fraction_goal):
     """
     From a set of files defining particle statistics from Dream3D the preciptates will be
     packed into n clusters with a set density. The placment uses the 
 
     Parameters
     ----------
-    n_clusters : int
-        The number of clusters that are generated.
-    size : (1,3) Ndarray
+    particle_radii : float
+        The radii of the spheres
+    n_particles : int
         The dimensions of the volume in which the clusters will be placed.
     packing_fraction_goal : float
         The goal packing density to reach within the clusters.
@@ -72,8 +72,8 @@ def clustering(particle_radii,n_particles,packing_fraction_goal):
         plt.show()
     
     # From the density of the clusters find the diameter of the cluster 
-    sphere_radius_0 = particle_radii*((n_particles/0.2) ** (1./3)) 
-    radii           = np.ones(n_particles)*particle_radii
+    sphere_radius_0 = sphere_radii*((n_spheres/0.2) ** (1./3)) 
+    radii           = np.ones(n_spheres)*sphere_radii
     
     # place via RSA
     print("Placing spheres via RSA")
